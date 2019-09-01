@@ -41,6 +41,10 @@
       background-size: contain;
       margin-left: 5px;
     }
+
+    &[data-ascending]::after {
+      transform: rotate(180deg);
+    }
   }
 
   &__row {

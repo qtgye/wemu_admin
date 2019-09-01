@@ -14,9 +14,8 @@
             scope="col"
             {% if heading.sortable %}data-sortable="true"{% endif %}
             data-prop="{{ heading.name }}"
-            class="table__columnheader">
-            {{ heading.title }}
-          </th>
+            data-title="{{ heading.title }}"
+            class="table__columnheader">{{ heading.title }}</th>
         {% endfor %}
       </tr>
     </thead>
