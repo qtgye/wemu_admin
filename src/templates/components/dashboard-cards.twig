@@ -1,45 +1,35 @@
 {# DASHBOARD_CARDS #}
 {% set cards = [
 	{
-		title: 'Users',
-		value: '8,000',
-		icon: '/images/users.svg',
+		title: 'Number of Businesses',
+		value: 75,
+    data_type: 'number'
 	},
 	{
-		title: 'Active Users',
-		value: '5,230',
-		icon: '/images/user-check.svg',
-	},
-	{
-		title: 'Trips',
-		value: '5,230',
-		icon: '/images/globe.svg',
-	},
-	{
-		title: 'Communities',
-		value: '5,230',
-		icon: '/images/heart.svg',
-	},
-	{
-		title: 'Businesses',
+		title: 'Number of Users',
 		value: '1,000',
-		icon: '/images/briefcase.svg',
+    data_type: 'number'
 	},
 	{
-		title: 'Events',
-		value: '5,230',
-		icon: '/images/coffee.svg',
+		title: 'Number of Products',
+		value: '1,000',
+    data_type: 'number',
+	},
+	{
+		title: 'Total Value of Products',
+		value: '$12,322',
+    data_type: 'currency',
 	},
 ]%}
 
 <div class="dashboard-cards">
 	{% for card in cards %}
-		<div class="dashboard-cards__card">
+		<div class="dashboard-cards__card dashboard-cards__card--{{ card.data_type }}">
 			<div class="dashboard-cards__card-header">
 				<h4 class="dashboard-cards__card-title">{{ card.title }}</h4>
 				<img src="{{ card.icon }}" alt="" class="dashboard-cards__card-icon">
 			</div>
-			<p class="dashboard-cards__card-value">{{ card.value }}</p>
+      <p class="dashboard-cards__card-value">{{ card.value }}</p>
 		</div>
 	{% endfor %}
 </div>
