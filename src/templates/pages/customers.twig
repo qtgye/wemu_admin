@@ -1,0 +1,13 @@
+{% extends '@templates/layouts/admin.twig' %}
+
+{% block title %}Customers{% endblock %}
+{% block body_class %}page--customers{% endblock %}
+
+{# Should be picked up by the parent template #}
+{% set active_nav_name = 'customers' %}
+
+{% block admin_contents %}
+	<form class="create-trip" action="/" method="post">
+		{% include '@templates/components/listing-header.twig' with { title: 'Customers' } only %}
+	</form>
+{% endblock %} {# Ends admin_contents block #}
