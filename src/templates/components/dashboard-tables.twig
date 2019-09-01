@@ -2,9 +2,18 @@
   {
     title: 'Top Businesses',
     headings: [
-      'Name',
-      '# Items Sold',
-      'Total Sales',
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'total_sold',
+        title: '# Items Sold',
+      },
+      {
+        name: 'total_sales',
+        title: 'Total Sales',
+      }
     ],
     rows: [
       {
@@ -32,9 +41,18 @@
   {
     title: 'Top Items',
     headings: [
-      'Name',
-      '# Sold',
-      'Total Sales',
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'total_sold',
+        title: '# Sold',
+      },
+      {
+        name: 'total_sales',
+        title: 'Total Sales',
+      }
     ],
     rows: [
       {
@@ -64,7 +82,6 @@
 <div class="dashboard-tables">
   {% for table in tables %}
     <div class="dashboard-tables__item">
-      <h4 class="dashboard-tables__heading">{{ table.title }}</h4>
       {% include '@templates/components/table.twig' with table only %}
     </div>
   {% endfor %}

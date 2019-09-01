@@ -1,18 +1,33 @@
-<table class="dashboard-tables__table">
-  <thead>
-    <tr class="dashboard-tables__columnheaders">
-      {% for heading in headings %}
-        <th scope="col" class="dashboard-tables__columnheader">{{ heading }}</th>
-      {% endfor %}
-    </tr>
-  </thead>
-  <tbody class="dashboard-tables__body">
-    {% for row in rows %}
-      <tr class="dashboard-tables__row">
-        {% for key, data in row %}
-          <td class="dashboard-tables__cell">{{ data }}</td>
+<div class="table">
+  {% if title %} 
+    <h4 class="table__heading">{{ title }}</h4>
+  {% endif %}
+  <table class="table__table">
+    {% if title %}
+      <caption>
+      </caption>
+    {% endif %}
+    <thead>
+      <tr class="table__columnheaders">
+       {% for heading in headings %}
+          <th
+            scope="col"
+            {% if heading.sortable %}data-sortable="true"{% endif %}
+            data-prop="{{ heading.name }}"
+            class="table__columnheader">
+            {{ heading.title }}
+          </th>
         {% endfor %}
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </thead>
+    <tbody class="table__body">
+      {% for row in rows %}
+        <tr class="table__row">
+          {% for key, data in row %}
+            <td class="table__cell" data-prop="{{ key }}" data-value="{{ data }}">{{ data }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
