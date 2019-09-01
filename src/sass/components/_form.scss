@@ -24,11 +24,24 @@ form {
 	margin-right: auto;
 }
 
+// Should contain 2 input-blocks
+.input-group-2up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 15px;
+  margin-top: 40px;
+
+  .input-block {
+    margin-top: 0 !important;
+  }
+}
+
 .input-block {
 	width: 100%;
 	text-align: left;
-	
-	&:not(:first-child) {
+
+  &:not(:first-child) {
 		margin-top: 30px;
 	}
 
@@ -58,7 +71,7 @@ form {
 		display: block;
 		width: 100%;
 		padding: 0 20px;
-		height: 54px;
+		height: 40px;
 		border-radius: 3px;
 		-webkit-appearance: none;
 		box-shadow: inset 0 1px 1px 0 rgba(16, 22, 26, 0.2), inset 0 0 0 1px rgba(16, 22, 26, 0.15);

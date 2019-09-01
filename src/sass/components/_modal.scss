@@ -35,8 +35,16 @@
 		overflow: auto;
 	}
 
+  &__heading {
+    @include font-primary-medium;
+    @include type((
+      font-size: 14px,
+      line-height: 18px,
+    ));
+  }
+
 	&__dialog {
-		min-width: 600px;
+    width: 900px;
 		padding: 20px;
 		background-color: $color-white;
 		border-radius: 3px;

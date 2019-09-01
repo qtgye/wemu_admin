@@ -80,8 +80,12 @@
     ]
   } %}
 
-  <form class="create-trip" action="/" method="post">
+  <form class="listing businesses-listing" action="/" method="post">
 		{% include '@templates/components/listing-header.twig' with { title: 'Businessses', with_add: true } only %}
     {% include '@templates/components/table.twig' with table only %}
+
+    {# Add modal #}
+    {% include '@templates/components/businesses-add-modal.twig' %}
+
 	</form>
 {% endblock %} {# Ends admin_contents block #}
