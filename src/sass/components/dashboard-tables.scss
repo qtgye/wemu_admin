@@ -1,0 +1,56 @@
+.dashboard-tables {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 30px;
+  margin-top: 30px;
+
+  &__item {
+     border-radius: 6px;
+     background-color: $color-white;
+     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0);
+     padding: 20px 20px 110px;
+  }
+
+  &__heading {
+    @include font-primary;
+    @include type((
+      font-size: 14px,
+      line-height: 18px,
+    ));
+  }
+
+  &__table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+  }
+
+  &__columnheader {
+    @include font-primary-medium;
+    @include type((
+      font-size: 14px,
+      line-height: 18px,
+    ));
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid rgba($color-gray-1, .15);
+  }
+
+  &__row {
+    &:nth-child(even) {
+      background-color: $color-gray-2;
+    }
+  }
+
+  &__cell {
+    @include font-primary;
+    @include type((
+      font-size: 14px,
+      line-height: 18px,
+    ));
+    padding: 10px;
+    color: $color-dark-gray-1;
+  }
+}

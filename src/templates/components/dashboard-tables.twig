@@ -1,0 +1,88 @@
+{% set tables = [
+  {
+    title: 'Top Businesses',
+    headings: [
+      'Name',
+      '# Items Sold',
+      'Total Sales',
+    ],
+    rows: [
+      {
+        name: 'Business Name One',
+        total_sold: 20,
+        total_sales: '$10,000',
+      },
+      {
+        name: 'Gilad',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Javier',
+        total_sold: 1,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Gilad',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+    ]
+  },
+  {
+    title: 'Top Items',
+    headings: [
+      'Name',
+      '# Sold',
+      'Total Sales',
+    ],
+    rows: [
+      {
+        name: 'Item Name',
+        total_sold: 20,
+        total_sales: '$10,000',
+      },
+      {
+        name: 'Item Name 2',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Item Name 4',
+        total_sold: 1,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Item Name 100',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+    ]
+  }
+] %}
+
+<div class="dashboard-tables">
+  {% for table in tables %}
+    <div class="dashboard-tables__item">
+      <h4 class="dashboard-tables__heading">{{ table.title }}</h4>
+      <table class="dashboard-tables__table">
+        <thead>
+          <tr class="dashboard-tables__columnheaders">
+            {% for heading in table.headings %}
+              <th scope="col" class="dashboard-tables__columnheader">{{ heading }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody class="dashboard-tables__body">
+          {% for row in table.rows %}
+            <tr class="dashboard-tables__row">
+              {% for key, data in row %}
+                <td class="dashboard-tables__cell">{{ data }}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endfor %}
+</div>
