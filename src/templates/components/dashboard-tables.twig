@@ -65,24 +65,7 @@
   {% for table in tables %}
     <div class="dashboard-tables__item">
       <h4 class="dashboard-tables__heading">{{ table.title }}</h4>
-      <table class="dashboard-tables__table">
-        <thead>
-          <tr class="dashboard-tables__columnheaders">
-            {% for heading in table.headings %}
-              <th scope="col" class="dashboard-tables__columnheader">{{ heading }}</th>
-            {% endfor %}
-          </tr>
-        </thead>
-        <tbody class="dashboard-tables__body">
-          {% for row in table.rows %}
-            <tr class="dashboard-tables__row">
-              {% for key, data in row %}
-                <td class="dashboard-tables__cell">{{ data }}</td>
-              {% endfor %}
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      {% include '@templates/components/table.twig' with table only %}
     </div>
   {% endfor %}
 </div>
